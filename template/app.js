@@ -7,4 +7,4 @@ function solution(input) {
   return null;
 }
 
-solution(input);
+console.log(solution(input));
