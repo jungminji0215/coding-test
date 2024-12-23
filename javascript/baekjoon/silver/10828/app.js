@@ -6,8 +6,8 @@ const input = fs.readFileSync(filePath).toString().split("\n");
 class Stack {
   #array;
 
-  constructor(array = []) {
-    this.#array = array;
+  constructor() {
+    this.#array = [];
   }
 
   push(value) {
