@@ -1,9 +1,6 @@
-const readline = require("readline");
+const fs = require("fs");
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+const input = fs.readFileSync(0).toString().trim().split("\n").map(Number);
 
 const getQuadrant = (x, y) => {
   if (x > 0 && y > 0) {
@@ -17,17 +14,9 @@ const getQuadrant = (x, y) => {
   }
 };
 
-const solution = (input) => {
-  const [x, y] = input.map(Number);
-  console.log(getQuadrant(x, y));
-};
+function solution(input) {
+  const [x, y] = input;
+  return getQuadrant(x, y);
+}
 
-// 입력 처리
-let input = [];
-rl.on("line", (line) => {
-  input.push(line);
-  if (input.length === 2) {
-    solution(input);
-    rl.close();
-  }
-});
+console.log(solution(input));
